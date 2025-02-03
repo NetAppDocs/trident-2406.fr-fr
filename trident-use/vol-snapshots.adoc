@@ -240,6 +240,98 @@ cluster1::*> volume snapshot restore -vserver vs0 -volume vol3 -snapshot vol3_sn
 
 NOTE: Lorsque vous restaurez une copie Snapshot, la configuration de volume existante est écrasée. Les modifications apportées aux données de volume après la création de la copie Snapshot sont perdues.
 
+Le répertoire des snapshots est masqué par défaut pour faciliter la compatibilité maximale des volumes provisionnés à l'aide des `ontap-nas` pilotes et `ontap-nas-economy`. Activez le `.snapshot` répertoire pour restaurer directement les données à partir de snapshots.
+
+
+NOTE: Lorsque vous restaurez une copie Snapshot, la configuration de volume existante est écrasée. Les modifications apportées aux données de volume après la création de la copie Snapshot sont perdues.
+
+
+
+== Restauration de volumes sur place à partir d'un snapshot
+
+ASTRA Control Provisioner assure une restauration rapide de volume sur place à partir d'un snapshot à l'aide du `TridentActionSnapshotRestore` système CR (TASR). Cette CR fonctionne comme une action Kubernetes impérative et ne persiste pas une fois l'opération terminée.
+
+ASTRA Control Provisioner prend en charge la restauration Snapshot sur `ontap-san`, `ontap-san-economy` `ontap-nas`, , `ontap-nas-flexgroup`, , , `azure-netapp-files` `gcp-cvs`, et `solidfire-san` pilotes.
+
+.Avant de commencer
+Vous devez disposer d'une demande de volume liée et d'un instantané de volume disponible.
+
+* Vérifiez que l'état de la demande de volume persistant est lié.
++
+[listing]
+----
+kubectl get pvc
+----
+* Vérifiez que le snapshot du volume est prêt à être utilisé.
++
+[listing]
+----
+kubectl get vs
+----
+
+
+.Étapes
+. Créer la CR TASR. Cet exemple crée une CR pour la PVC `pvc1` et l'instantané de volume `pvc1-snapshot`.
++
+[listing]
+----
+cat tasr-pvc1-snapshot.yaml
+
+apiVersion: v1
+kind: TridentActionSnapshotRestore
+metadata:
+  name: this-doesnt-matter
+  namespace: trident
+spec:
+  pvcName: pvc1
+  volumeSnapshotName: pvc1-snapshot
+----
+. Appliquez la CR pour effectuer une restauration à partir de l'instantané. Cet exemple permet de restaurer des données à partir d'un snapshot `pvc1`.
++
+[listing]
+----
+kubectl create -f tasr-pvc1-snapshot.yaml
+
+tridentactionsnapshotrestore.trident.netapp.io/this-doesnt-matter created
+----
+
+
+.Résultats
+ASTRA Control Provisioner restaure les données à partir du snapshot. Vous pouvez vérifier l'état de la restauration des snapshots.
+
+[listing]
+----
+kubectl get tasr -o yaml
+
+apiVersion: v1
+items:
+- apiVersion: trident.netapp.io/v1
+  kind: TridentActionSnapshotRestore
+  metadata:
+    creationTimestamp: "2023-04-14T00:20:33Z"
+    generation: 3
+    name: this-doesnt-matter
+    namespace: trident
+    resourceVersion: "3453847"
+    uid: <uid>
+  spec:
+    pvcName: pvc1
+    volumeSnapshotName: pvc1-snapshot
+  status:
+    startTime: "2023-04-14T00:20:34Z"
+    completionTime: "2023-04-14T00:20:37Z"
+    state: Succeeded
+kind: List
+metadata:
+  resourceVersion: ""
+----
+[NOTE]
+====
+* Dans la plupart des cas, Astra Control Provisioner ne réessaiera pas automatiquement l'opération en cas de panne. Vous devrez effectuer à nouveau l'opération.
+* Les utilisateurs Kubernetes sans accès administrateur peuvent avoir à obtenir l'autorisation de l'administrateur pour créer une CR ASR dans l'espace de noms de leur application.
+
+
+====
 
 
 == Supprimez un volume persistant avec les snapshots associés
