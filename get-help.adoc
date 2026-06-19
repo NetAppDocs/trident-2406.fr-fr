@@ -84,8 +84,7 @@ Pour obtenir de l'aide sur Astra Trident, créez un bundle de support à l'aide 
 
 == Pour en savoir plus
 
-* link:https://cloud.netapp.com/blog/topic/astra["Blogs Astra"^]
 * link:https://netapp.io/persistent-storage-provisioner-for-kubernetes/["Blogs Trident d'Astra"^]
-* link:https://cloud.netapp.com/kubernetes-hub["Kubernetes Hub"^]
+* link:https://www.netapp.com/console/["Kubernetes Hub"^]
 * link:https://netapp.io/["NetApp.io"^]
 

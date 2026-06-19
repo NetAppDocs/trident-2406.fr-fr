@@ -26,9 +26,9 @@ indexpage:
   - title: Déployez Astra Trident
     links:
     - title: Déployez-les avec l'opérateur Trident
-      url: "/trident-get-started/kubernetes-deploy-operator.html"
+      url: "/trident-install/kubernetes-deploy-operator.html"
     - title: Déploiement avec tridentctl
-      url: "/trident-get-started/kubernetes-deploy-tridentctl.html"
+      url: "/trident-install/kubernetes-deploy-tridentctl.html"
     - title: Déployez Astra Trident pour Docker
       url: "/trident-docker/deploy-docker.html"
   - title: Mettez à niveau Astra Trident
@@ -53,12 +53,10 @@ indexpage:
       url: https://tv.netapp.com/detail/video/5995831475001/using-trident-with-kubernetes
   - title: Blogs et communauté
     links:
-    - title: Blogs Astra
-      url: https://cloud.netapp.com/blog/topic/astra
     - title: Blogs Trident d'Astra
       url: https://netapp.io/persistent-storage-provisioner-for-kubernetes/
     - title: Kubernetes Hub
-      url: https://cloud.netapp.com/kubernetes-hub
+      url: https://www.netapp.com/console/
     - title: NetApp.io
       url: https://netapp.io/
     - title: Déroulez
