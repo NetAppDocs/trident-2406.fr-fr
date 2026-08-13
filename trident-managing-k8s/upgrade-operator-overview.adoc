@@ -16,9 +16,10 @@ Avant d'utiliser l'opérateur Trident pour mettre à niveau Astra Trident, vous 
 
 
 
+[[trident-operator-upgrade-handling]]
 == Gestion des mises à niveau par l'opérateur Trident
 
-L'un des nombreux link:../trident-get-install/kubernetes-deploy.html["Avantages de l'utilisation de l'opérateur Trident"] moyens d'installer et de mettre à niveau Astra Trident est la gestion automatique des objets Astra Trident et Kubernetes sans perturber les volumes montés existants. De cette façon, Astra Trident peut prendre en charge des mises à niveau sans interruption, ou link:https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/["_mises à jour en continu_"^]. En particulier, l'opérateur Trident communique avec le cluster Kubernetes pour :
+L'un des nombreux link:../trident-install/kubernetes-deploy.html["Avantages de l'utilisation de l'opérateur Trident"] moyens d'installer et de mettre à niveau Astra Trident est la gestion automatique des objets Astra Trident et Kubernetes sans perturber les volumes montés existants. De cette façon, Astra Trident peut prendre en charge des mises à niveau sans interruption, ou link:https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/["_mises à jour en continu_"^]. En particulier, l'opérateur Trident communique avec le cluster Kubernetes pour :
 
 * Supprimez et recréez le déploiement du contrôleur Trident et le nœud DemonSet.
 * Remplacez l'afficheur de contrôleur Trident et les pods de nœud Trident par de nouvelles versions.
@@ -30,10 +31,11 @@ L'un des nombreux link:../trident-get-install/kubernetes-deploy.html["Avantages 
 
 
 
-TIP: Pour plus d'informations sur l'architecture Astra Trident sur le cluster Kubernetes, veuillez vous référer à link:../trident-get-started/intro.html#astra-trident-architecture["Architecture d'Astra Trident"].
+TIP: Pour plus d'informations sur l'architecture Astra Trident sur le cluster Kubernetes, veuillez vous référer à link:../trident-get-started/architecture.html["Architecture Trident"].
 
 
 
+[[operator-upgrade-workflow]]
 == Workflow de mise à niveau de l'opérateur
 
 Lorsque vous lancez une mise à niveau avec l'opérateur Trident :

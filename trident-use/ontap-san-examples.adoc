@@ -16,6 +16,7 @@ Découvrez comment créer et utiliser les pilotes SAN ONTAP avec votre installat
 
 
 
+[[backend-configuration-options]]
 == Options de configuration du back-end
 
 Voir le tableau suivant pour les options de configuration du back-end :
@@ -105,6 +106,7 @@ Voir le tableau suivant pour les options de configuration du back-end :
 |===
 
 
+[[backend-configuration-options-for-provisioning-volumes]]
 == Options de configuration back-end pour les volumes de provisionnement
 
 Vous pouvez contrôler le provisionnement par défaut à l'aide de ces options dans la `defaults` section de la configuration. Pour un exemple, voir les exemples de configuration ci-dessous.
@@ -154,6 +156,7 @@ Vous pouvez contrôler le provisionnement par défaut à l'aide de ces options d
 |===
 
 
+[[volume-provisioning-examples]]
 === Exemples de provisionnement de volumes
 
 Voici un exemple avec des valeurs par défaut définies :
@@ -199,6 +202,7 @@ Actuellement, le redimensionnement est le seul moyen d'utiliser le nouveau calcu
 
 
 
+[[minimal-configuration-examples]]
 == Exemples de configuration minimaux
 
 Les exemples suivants montrent des configurations de base qui laissent la plupart des paramètres par défaut. C'est la façon la plus simple de définir un back-end.
@@ -363,6 +367,7 @@ defaults: {
 ====
 
 
+[[examples-of-backends-with-virtual-pools]]
 == Exemples de systèmes back-end avec pools virtuels
 
 Dans ces exemples de fichiers de définition back-end, des valeurs par défaut spécifiques sont définies pour tous les pools de stockage, comme `spaceReserve` aucun, `spaceAllocation` faux et `encryption` faux. Les pools virtuels sont définis dans la section stockage.
@@ -504,6 +509,7 @@ storage:
 ====
 
 
+[[map-backends-to-storageclasses]]
 == Mappage des systèmes back-end aux classes de stockage
 
 Les définitions de classe de stockage suivantes font référence à la <<Exemples de systèmes back-end avec pools virtuels>>. En utilisant ce `parameters.selector` champ, chaque classe de stockage indique quels pools virtuels peuvent être utilisés pour héberger un volume. Les aspects définis dans le pool virtuel sélectionné seront définis pour le volume.

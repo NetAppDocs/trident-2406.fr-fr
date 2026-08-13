@@ -21,6 +21,7 @@ Voir la link:prereqs-docker.html["conditions préalables au déploiement"]. Une 
 
 
 
+[[docker-managed-plugin-method-version-1-1317-03-and-later]]
 == Méthode de plug-in géré Docker (version 1.13/17.03 et ultérieure)
 
 .Avant de commencer
@@ -117,6 +118,7 @@ docker volume rm firstVolume
 
 
 
+[[traditional-method-version-1-12-or-earlier]]
 == Méthode traditionnelle (version 1.12 ou antérieure)
 
 .Avant de commencer
@@ -219,6 +221,7 @@ docker volume rm trident_2
 
 
 
+[[start-astra-trident-at-system-startup]]
 == Commencez avec Astra Trident au démarrage du système
 
 Un exemple de fichier d'unité pour les systèmes basés sur le système se trouve `contrib/trident.service.example` dans le Git repo. Pour utiliser le fichier avec RHEL, procédez comme suit :

@@ -16,6 +16,7 @@ Vous pouvez mettre à niveau Astra Trident pour Docker en toute sécurité, sans
 
 
 
+[[upgrade]]
 == Mise à niveau
 
 Suivez les étapes ci-dessous pour mettre à niveau Astra Trident pour Docker.
@@ -77,6 +78,7 @@ IMPORTANT: Si vous effectuez la mise à niveau d'une ancienne version d'Astra Tr
 
 
 
+[[uninstall]]
 == Désinstaller
 
 Effectuez les opérations suivantes pour désinstaller Astra Trident pour Docker.

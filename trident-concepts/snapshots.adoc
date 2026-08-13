@@ -16,6 +16,7 @@ Découvrez comment Astra Trident gère la création de copies Snapshot de volume
 
 
 
+[[learn-about-volume-snapshot-creation]]
 == En savoir plus sur la création de snapshots de volume
 
 * Pour les `ontap-nas` pilotes , `ontap-san`, `gcp-cvs` et `azure-netapp-files` , chaque volume persistant est mappé sur un FlexVol. Par conséquent, des snapshots de volume sont créés sous forme de snapshots NetApp. La technologie Snapshot de NetApp offre davantage de stabilité, d'évolutivité, de capacité de restauration et de performances que les technologies Snapshot concurrentes. Ces copies Snapshot sont extrêmement efficaces, aussi bien en termes de temps de création que d'espace de stockage.

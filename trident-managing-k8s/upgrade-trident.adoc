@@ -16,6 +16,7 @@ summary: 'ASTRA Trident suit une publication semestrielle, avec trois versions m
 
 
 
+[[considerations-before-upgrading]]
 == Considérations avant la mise à niveau
 
 Lorsque vous mettez à niveau vers la dernière version d'Astra Trident, prenez en compte les points suivants :
@@ -34,6 +35,7 @@ Lorsque vous mettez à niveau vers la dernière version d'Astra Trident, prenez 
 
 
 
+[[step-1-select-a-version]]
 == Étape 1 : sélectionnez une version
 
 Les versions Astra Trident suivent une convention de dénomination basée sur la date `YY.MM`, où « YY » correspond aux deux derniers chiffres de l'année et « MM » au mois. Les versions de points suivent une `YY.MM.X` convention, où « X » est le niveau de patch. Vous allez sélectionner la version à mettre à niveau en fonction de la version à partir de laquelle vous effectuez la mise à niveau.
@@ -52,6 +54,7 @@ NOTE: Lorsque vous effectuez une mise à niveau avec l'opérateur Trident sur Op
 
 
 
+[[step-2-determine-the-original-installation-method]]
 == Étape 2 : déterminer la méthode d'installation d'origine
 
 Pour déterminer quelle version vous avez utilisée pour l'installation initiale d'Astra Trident :
@@ -72,6 +75,7 @@ Pour déterminer quelle version vous avez utilisée pour l'installation initiale
 
 
 
+[[step-3-select-an-upgrade-method]]
 == Étape 3 : sélectionnez une méthode de mise à niveau
 
 En règle générale, vous devez effectuer la mise à niveau en utilisant la même méthode que celle employée lors de l'installation initiale, cependant vous pouvez link:../trident-install/kubernetes-deploy.html#moving-between-installation-methods["passer d'une méthode d'installation à l'autre"]. Il existe deux options pour mettre à niveau Astra Trident.

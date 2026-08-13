@@ -16,6 +16,7 @@ Assurez-vous que l'installation d'Astra Trident est sécurisée à l'aide des re
 
 
 
+[[run-astra-trident-in-its-own-namespace]]
 == Exécutez Astra Trident dans son propre espace de noms
 
 Il est important d'empêcher les applications, les administrateurs d'applications, les utilisateurs et les applications de gestion d'accéder aux définitions d'objets Astra Trident ou aux pods pour assurer un stockage fiable et bloquer tout risque d'activité malveillante.
@@ -24,6 +25,7 @@ Pour séparer les autres applications et utilisateurs d'Astra Trident, installez
 
 
 
+[[use-chap-authentication-with-ontap-san-backends]]
 == Utilisez l'authentification CHAP avec les systèmes back-end ONTAP SAN
 
 ASTRA Trident prend en charge l'authentification CHAP pour les workloads SAN ONTAP (à l'aide des `ontap-san` pilotes et `ontap-san-economy`). NetApp recommande d'utiliser le protocole CHAP bidirectionnel avec Astra Trident pour l'authentification entre l'hôte et le système back-end de stockage.
@@ -32,6 +34,7 @@ Pour les systèmes back-end ONTAP qui utilisent des pilotes de stockage SAN, Ast
 
 
 
+[[use-chap-authentication-with-netapp-hci-and-solidfire-backends]]
 == Utilisez l'authentification CHAP avec les systèmes back-end NetApp HCI et SolidFire
 
 NetApp recommande de déployer le protocole CHAP bidirectionnel pour garantir l'authentification entre l'hôte et les systèmes back-end NetApp HCI et SolidFire. Astra Trident utilise un objet secret qui inclut deux mots de passe CHAP par locataire. Lorsque vous installez Astra Trident, il gère les secrets CHAP et les stocke dans un `tridentvolume` objet CR pour le PV correspondant. Lorsque vous créez un volume persistant, Astra Trident utilise les secrets CHAP pour initier une session iSCSI et communiquer avec le système NetApp HCI et SolidFire sur CHAP.
@@ -41,6 +44,7 @@ NOTE: Les volumes créés par Astra Trident ne sont associés à aucun groupe d'
 
 
 
+[[use-astra-trident-with-nve-and-nae]]
 == Utilisez Astra Trident avec NVE et NAE
 
 NetApp ONTAP assure le chiffrement des données au repos pour protéger les données sensibles en cas de vol, de retour ou de reconversion d'un disque. Pour plus de détails, reportez-vous à link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Configurer la présentation de NetApp Volume Encryption"^].

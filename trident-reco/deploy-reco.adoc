@@ -16,6 +16,7 @@ Utilisez les recommandations indiquées ici pour déployer Astra Trident.
 
 
 
+[[deploy-to-a-dedicated-namespace]]
 == Déploiement dans un namespace dédié
 
 https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/["Espaces de noms"^] séparation administrative entre les différentes applications et obstacle au partage des ressources. Par exemple, un volume persistant ne peut pas être consommé depuis un autre espace de noms. Astra Trident fournit des ressources PV à tous les namespaces du cluster Kubernetes et exploite par conséquent un compte de service avec des privilèges élevés.
@@ -24,6 +25,7 @@ L'accès au pod Trident peut également permettre à un utilisateur d'accéder a
 
 
 
+[[use-quotas-and-range-limits-to-control-storage-consumption]]
 == Utilisez les quotas et les limites des plages pour contrôler la consommation du stockage
 
 Kubernetes dispose de deux fonctionnalités qui, lorsqu'elles sont combinées, fournissent un mécanisme puissant pour limiter la consommation des ressources par les applications.  https://kubernetes.io/docs/concepts/policy/resource-quotas/#storage-resource-quota["mécanisme de quotas de stockage"^]Permet à l'administrateur de mettre en œuvre des limites de consommation de capacité et de nombre d'objets globales et spécifiques à chaque classe de stockage, par espace de noms. En outre, l'utilisation d'un https://kubernetes.io/docs/tasks/administer-cluster/limit-storage-consumption/#limitrange-to-limit-requests-for-storage["limite de plage"^] garantit que les demandes de volume persistant sont à la fois dans les limites minimum et maximum avant que la demande ne soit transmise au provisionneur.

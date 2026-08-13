@@ -16,6 +16,7 @@ Découvrez les options de configuration NFS backend pour Google Cloud NetApp vol
 
 
 
+[[backend-configuration-options]]
 == Options de configuration du back-end
 
 Chaque back-end provisionne les volumes dans une seule région Google Cloud. Pour créer des volumes dans d'autres régions, vous pouvez définir des systèmes back-end supplémentaires.
@@ -68,6 +69,7 @@ Chaque back-end provisionne les volumes dans une seule région Google Cloud. Pou
 |===
 
 
+[[volume-provisioning-options]]
 == Options de provisionnement de volumes
 
 Vous pouvez contrôler le provisionnement du volume par défaut dans la `defaults` section du fichier de configuration.
@@ -90,6 +92,7 @@ Vous pouvez contrôler le provisionnement du volume par défaut dans la `default
 |===
 
 
+[[example-configurations]]
 == Exemples de configurations
 
 Les exemples suivants montrent des configurations de base qui laissent la plupart des paramètres par défaut. C'est la façon la plus simple de définir un back-end.
@@ -331,6 +334,7 @@ spec:
 ====
 
 
+[[whats-next]]
 == Et la suite ?
 
 Après avoir créé le fichier de configuration backend, exécutez la commande suivante :
@@ -358,10 +362,12 @@ Après avoir identifié et corrigé le problème avec le fichier de configuratio
 
 
 
+[[more-examples]]
 == Plus d'exemples
 
 
 
+[[storage-class-definition-examples]]
 === Exemples de définition de classe de stockage
 
 Voici une définition de base `StorageClass` qui fait référence au back-end ci-dessus.
@@ -415,6 +421,7 @@ Pour plus de détails sur les classes de stockage, reportez-vous link:../trident
 
 
 
+[[pvc-definition-example]]
 === Exemple de définition de PVC
 
 [listing]

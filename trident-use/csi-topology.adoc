@@ -16,6 +16,7 @@ ASTRA Trident peut créer et attacher de manière sélective des volumes aux nœ
 
 
 
+[[overview]]
 == Présentation
 
 Grâce à la fonction de topologie CSI, l'accès aux volumes peut être limité à un sous-ensemble de nœuds, en fonction des régions et des zones de disponibilité. Les fournisseurs cloud permettent aujourd'hui aux administrateurs Kubernetes de frayer des nœuds basés sur une zone. Les nœuds peuvent se trouver dans différentes zones de disponibilité au sein d'une région ou entre différentes régions. Astra Trident utilise la topologie CSI pour faciliter le provisionnement des volumes pour les charges de travail dans une architecture multi-zones.
@@ -56,6 +57,7 @@ kubectl get nodes -o=jsonpath='{range .items[*]}[{.metadata.name}, {.metadata.la
 
 
 
+[[step-1-create-a-topology-aware-backend]]
 == Étape 1 : création d'un back-end conscient de la topologie
 
 Les systèmes back-end de stockage Astra Trident peuvent être conçus pour provisionner des volumes de manière sélective selon les zones de disponibilité. Chaque back-end peut porter un bloc facultatif `supportedTopologies` représentant une liste de zones et de régions prises en charge. Pour les classes de stockage qui utilisent un tel backend, un volume ne sera créé que si une application est planifiée dans une région/zone prise en charge.
@@ -139,6 +141,7 @@ Dans cet exemple, les `region` étiquettes et `zone` représentent l'emplacement
 
 
 
+[[step-2-define-storageclasses-that-are-topology-aware]]
 == Étape 2 : définissez des classes de stockage qui prennent en compte la topologie
 
 Les classes de stockage peuvent être définies en fonction des labels de topologie fournis aux nœuds du cluster, et contenir des informations de topologie. Cela déterminera les pools de stockage qui servent de candidats aux demandes de volume persistant faites et le sous-ensemble de nœuds qui peuvent utiliser les volumes provisionnés par Trident.
@@ -169,6 +172,7 @@ Dans la définition de classe de stockage fournie ci-dessus, `volumeBindingMode`
 
 
 
+[[step-3-create-and-use-a-pvc]]
 == Étape 3 : création et utilisation d'une demande de volume persistant
 
 Une fois la classe de stockage créée et mappée à un back-end, vous pouvez désormais créer des demandes de volume persistant.
@@ -277,12 +281,14 @@ pvc-san   Bound    pvc-ecb1e1a0-840c-463b-8b65-b3d033e2e62b   300Mi      RWO    
 ----
 
 
+[[update-backends-to-include-supportedtopologies]]
 == Mettez à jour les systèmes back-end pour inclure `supportedTopologies`
 
 Les systèmes back-end préexistants peuvent être mis à jour pour inclure une liste d' `supportedTopologies`utilisation `tridentctl backend update`. Cela n'affecte pas les volumes qui ont déjà été provisionnés et ne sera utilisé que pour les demandes de volume virtuel suivantes.
 
 
 
+[[find-more-information]]
 == Trouvez plus d'informations
 
 * https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/["Gestion des ressources pour les conteneurs"^]

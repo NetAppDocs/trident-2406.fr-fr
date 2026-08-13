@@ -16,6 +16,7 @@ ASTRA Trident fournit un ensemble de terminaux de metrics Prometheus que vous po
 
 
 
+[[overview]]
 == Présentation
 
 Avec les metrics d'Astra Trident, vous pouvez :
@@ -36,12 +37,14 @@ NOTE: Par défaut, les mesures de Trident sont exposées sur le port cible `8001
 
 
 
+[[step-1-define-a-prometheus-target]]
 == Étape 1 : définir une cible Prometheus
 
 Vous devez définir une cible Prometheus pour collecter les metrics et obtenir des informations sur les systèmes back-end gérés par Trident, les volumes qu'elle crée, etc.  https://netapp.io/2020/02/20/prometheus-and-trident/["Blog"^]Vous apprendrez ainsi à utiliser Prometheus et Grafana avec Astra Trident pour récupérer des metrics. Découvrez sur ce blog comment exécuter Prometheus en tant qu'opérateur dans votre cluster Kubernetes et comment créer un ServiceMonitor pour obtenir des metrics Astra Trident.
 
 
 
+[[step-2-create-a-prometheus-servicemonitor]]
 == Étape 2 : créer un ServiceMonitor Prometheus
 
 Pour consommer les metrics Trident, vous devez créer un ServiceMonitor Prometheus qui surveille le `trident-csi` service et écoute sur le `metrics` port. Un exemple de ServiceMonitor se présente comme suit :
@@ -73,6 +76,7 @@ En plus des metrics disponibles directement depuis Astra Trident, kubelet expose
 
 
 
+[[step-3-query-trident-metrics-with-promql]]
 == Étape 3 : interroger les mesures Trident avec PromQL
 
 PromQL est bon pour la création d'expressions qui renvoient des séries chronologiques ou des données tabulaires.
@@ -81,6 +85,7 @@ Voici quelques questions PromQL que vous pouvez utiliser :
 
 
 
+[[get-trident-health-information]]
 === Accédez aux informations sur l'état de santé de Trident
 
 * **Pourcentage de réponses HTTP 2XX d'Astra Trident**
@@ -106,6 +111,7 @@ sum by (operation) (trident_operation_duration_milliseconds_sum{success="true"})
 ----
 
 
+[[get-astra-trident-usage-information]]
 === Découvrez les informations d'utilisation d'Astra Trident
 
 * **Taille moyenne du volume**
@@ -124,6 +130,7 @@ sum (trident_volume_allocated_bytes) by (backend_uuid)
 ----
 
 
+[[get-individual-volume-usage]]
 === Utiliser individuellement le volume
 
 
@@ -138,6 +145,7 @@ kubelet_volume_stats_used_bytes / kubelet_volume_stats_capacity_bytes * 100
 ----
 
 
+[[learn-about-astra-trident-autosupport-telemetry]]
 == Découvrez la télémétrie AutoSupport d'Astra Trident
 
 Par défaut, Astra Trident envoie des metrics de Prometheus et des informations de base back-end à NetApp dans un rythme quotidien.
@@ -176,6 +184,7 @@ items:
 
 
 
+[[disable-astra-trident-metrics]]
 == Désactivation des metrics d'Astra Trident
 
 Pour que **disable** metrics ne soient pas signalés, vous devez générer des YAML personnalisés (à l'aide de `--generate-custom-yaml` l'indicateur) et les modifier pour supprimer l' `--metrics`indicateur d'appel pour le `trident-main` conteneur.

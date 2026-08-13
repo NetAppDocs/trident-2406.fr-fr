@@ -16,6 +16,7 @@ L'opérateur Trident vous permet de personnaliser l'installation d'Astra Trident
 
 
 
+[[understanding-controller-pods-and-node-pods]]
 == Présentation des pods de contrôleur et des nœuds
 
 ASTRA Trident s'exécute comme un seul pod de contrôleur, plus un pod de nœud sur chaque nœud worker dans le cluster. Le pod de nœuds doit être exécuté sur n'importe quel hôte sur lequel vous souhaitez potentiellement monter un volume Astra Trident.
@@ -28,6 +29,7 @@ Kubernetes link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-p
 
 
 
+[[configuration-options]]
 == Options de configuration
 
 
@@ -117,6 +119,7 @@ NOTE: Pour plus d'informations sur le formatage des paramètres du pod, reportez
 
 
 
+[[details-about-force-detach]]
 === Détails sur le détachement forcé
 
 Forcer le détachement est disponible pour `ontap-san` et `ontap-san-economy` uniquement. Avant d'activer le détachement forcé, l'arrêt non autorisé des nœuds (NGN) doit être activé sur le cluster Kubernetes. Pour plus d'informations, reportez-vous link:https://kubernetes.io/docs/concepts/architecture/nodes/#non-graceful-node-shutdown["Kubernetes : arrêt du nœud sans interruption"^]à .
@@ -142,6 +145,7 @@ Lorsque l'intégrité du nœud est restaurée et que la taint est supprimée, As
 
 
 
+[[sample-configurations]]
 == Exemples de configurations
 
 Vous pouvez utiliser les attributs dans <<Options de configuration>> lors de la définition `TridentOrchestrator` pour personnaliser votre installation.

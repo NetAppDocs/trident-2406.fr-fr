@@ -16,6 +16,7 @@ Créez un volume persistant et une demande de volume persistant qui utilisent la
 
 
 
+[[overview]]
 == Présentation
 
 Un link:https://kubernetes.io/docs/concepts/storage/persistent-volumes/["_Volume persistant_"^] (PV) est une ressource de stockage physique provisionnée par l'administrateur du cluster sur un cluster Kubernetes. La https://kubernetes.io/docs/concepts/storage/persistent-volumes["_PersistentVolumeClaim_"^] demande de volume persistant est une demande d'accès au volume persistant sur le cluster.
@@ -26,6 +27,7 @@ Après avoir créé le volume persistant et la demande de volume persistant, vou
 
 
 
+[[sample-manifests]]
 === Exemples de manifestes
 
 .Exemple de manifeste de volume persistant
@@ -148,6 +150,7 @@ spec:
 ====
 
 
+[[create-the-pv-and-pvc]]
 == Créer le volume persistant et la demande de volume persistant
 
 .Étapes

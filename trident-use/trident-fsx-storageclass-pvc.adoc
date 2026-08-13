@@ -16,10 +16,12 @@ Configurez un objet StorageClass Kubernetes et créez la classe de stockage pour
 
 
 
+[[create-a-storage-class]]
 == Créer une classe de stockage
 
 
 
+[[configure-a-kubernetes-storageclass-object]]
 === Configuration d'un objet StorageClass Kubernetes
 
 Le système https://kubernetes.io/docs/concepts/storage/storage-classes/["Objet classe de stockage Kubernetes"^] identifie Astra Trident en tant que mécanisme de provisionnement utilisé pour cette classe indique à Astra Trident comment provisionner un volume. Par exemple :
@@ -41,6 +43,7 @@ Reportez-vous link:../trident-reference/objects.html["Kubernetes et objets Tride
 
 
 
+[[create-a-storage-class]]
 === Créer une classe de stockage
 
 .Étapes
@@ -63,6 +66,7 @@ basic-csi    csi.trident.netapp.io   15h
 
 
 
+[[create-the-pv-and-pvc]]
 == Créer le volume persistant et la demande de volume persistant
 
 Un link:https://kubernetes.io/docs/concepts/storage/persistent-volumes/["_Volume persistant_"^] (PV) est une ressource de stockage physique provisionnée par l'administrateur du cluster sur un cluster Kubernetes. La https://kubernetes.io/docs/concepts/storage/persistent-volumes["_PersistentVolumeClaim_"^] demande de volume persistant est une demande d'accès au volume persistant sur le cluster.
@@ -73,6 +77,7 @@ Après avoir créé le volume persistant et la demande de volume persistant, vou
 
 
 
+[[sample-manifests]]
 === Exemples de manifestes
 
 .Exemple de manifeste de volume persistant
@@ -141,6 +146,7 @@ storageClassName: protection-gold
 ====
 
 
+[[create-the-pv-and-pvc]]
 === Créer le volume persistant et la demande de volume persistant
 
 .Étapes
@@ -178,6 +184,7 @@ Reportez-vous link:../trident-reference/objects.html["Kubernetes et objets Tride
 
 
 
+[[astra-trident-attributes]]
 == Attributs d'Astra Trident
 
 Ces paramètres déterminent quels pools de stockage gérés par Astra Trident doivent être utilisés pour provisionner les volumes d'un type donné.
